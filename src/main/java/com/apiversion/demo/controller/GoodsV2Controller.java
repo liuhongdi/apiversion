@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 //整个controller都匹配/v2/goods/*
-@ApiVersion(2)
+@ApiVersion("2")
 @RestController
 @RequestMapping("/{version}/goods")
 public class GoodsV2Controller {

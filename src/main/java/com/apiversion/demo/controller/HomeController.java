@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeController {
 
     //匹配版本v1的访问
-    @ApiVersion(1)
+    @ApiVersion("1")
     @GetMapping
     @RequestMapping("/home")
     public String home01(@PathVariable String version) {
@@ -19,10 +19,18 @@ public class HomeController {
     }
 
     //匹配版本v2的访问
-    @ApiVersion(2)
+    @ApiVersion("2.0")
     @GetMapping
     @RequestMapping("/home")
     public String home02(@PathVariable String version) {
         return "home v2 version: " + version;
+    }
+
+    //匹配版本v2的访问
+    @ApiVersion("1.5")
+    @GetMapping
+    @RequestMapping("/home")
+    public String home15(@PathVariable String version) {
+        return "home v1.5 version: " + version;
     }
 }

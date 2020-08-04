@@ -7,5 +7,5 @@ import java.lang.annotation.*;
 @Documented
 public @interface ApiVersion {
     //版本号的值，从1开始
-    int value() default 1;
+    String value() default "1";
 }

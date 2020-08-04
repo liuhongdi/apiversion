@@ -26,14 +26,11 @@ public class ApiVersionRequestMappingHandlerMapping extends RequestMappingHandle
         return createRequestCondition(apiVersion);
     }
 
+
+
     //返回ApiVersionCondition
     private RequestCondition<ApiVersionCondition> createRequestCondition(ApiVersion apiVersion) {
-        if (Objects.isNull(apiVersion)) {
-            return null;
-        }
-        int value = apiVersion.value();
-        Assert.isTrue(value >= 1, "Api Version Must be greater than or equal to 1");
-        return new ApiVersionCondition(value);
+        return apiVersion == null ? null : new ApiVersionCondition(apiVersion.value());
     }
 
 }
